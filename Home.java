@@ -87,7 +87,7 @@ public class Home extends JFrame implements ActionListener
         ledger.setForeground(Color.WHITE);
         ledger.setBackground(blue);
 
-		eligible = new JButton("Placement Eligibility");
+		eligible = new JButton("Appraisal Slab Eligibility");
 		eligible.addActionListener(this);
 		eligible.setBounds(800,475, 250, 50);
 		Font font6 = new Font("Verdana", Font.BOLD, 16);

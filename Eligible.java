@@ -18,7 +18,7 @@ public class Eligible extends JFrame implements ActionListener
 
     Eligible()
     {
-        super("Placement Eligibility");
+        super("Apraisal Eligibility");
         con = getContentPane();
         con.setLayout(null);
         Color  lightBlue = new Color(0,255,255);
@@ -30,22 +30,22 @@ public class Eligible extends JFrame implements ActionListener
 
         Font font = new Font("Verdana", Font.BOLD, 16);
         Color blue = new Color(30,144,255);
-        eligibleheading=new JLabel("PLACEMENT ELIGIBILITY");
+        eligibleheading=new JLabel("APRAISAL ELIGIBILITY");
         eligibleheading.setBounds(550, 5, 700,20);
         eligibleheading.setFont(font);
         eligibleheading.setForeground(Color.WHITE);
 
-        eligibleheading1=new JLabel("PLATINUM PACKAGE: CGPA>=8 AND NO BACKLOGS ALLOWED");
+        eligibleheading1=new JLabel("10% - CTC < 10 LPA and Number of Complaints < 8");
         eligibleheading1.setBounds(200, 50, 700,20);
         eligibleheading1.setFont(font);
         eligibleheading1.setForeground(Color.WHITE);
 
-        eligibleheading2=new JLabel("GOLD PACKAGE: CGPA>=7 AND NO BACKLOGS ALLOWED");
+        eligibleheading2=new JLabel("20% - CTC < 10 LPA and Number of Complaints < 3");
         eligibleheading2.setBounds(200, 75, 700,20);
         eligibleheading2.setFont(font);
         eligibleheading2.setForeground(Color.WHITE);
 
-        eligibleheading3=new JLabel("SILVER PACKAGE: CGPA>=6");
+        eligibleheading3=new JLabel("30% - CTC < 10 LPA and Number of Complaints = 0");
         eligibleheading3.setBounds(200, 100, 700,20);
         eligibleheading3.setFont(font);
         eligibleheading3.setForeground(Color.WHITE);
@@ -86,26 +86,19 @@ public class Eligible extends JFrame implements ActionListener
 
     }
 
+   
+
     public void actionPerformed(ActionEvent ae) 
     {
         if(ae.getSource()==display)
         {
 			try
             {
-                //platinum
-		        //cgpa >=8.0 && nob=0
-		        //gold
-		        //cgpa >=7.0 && nob=0
-		        //silver
-		        //cgpa >=6.0
-
-                //platinum: cloudera 26, sap labs 24,amazon,19, anz 11, capgemini 8, cognizant 6, wipro 4
-                //silver: anz 11, capgemini 8, cognizant 6, wipro 4
-                //gold: cognizant 6, wipro 4
+                
 
                 System.out.println("Eligibilty Checked adn Displayed");
-		        String name, cgpa1, nob1, r,b,e="";
-		        double cgpa, nob;
+		        String name, salary1, nob1, r,b,e="";
+		        double salary, nob;
 		        
                 File temp = new File("temp.txt");
 				Boolean createNewFile1 = temp.createNewFile();
@@ -116,13 +109,13 @@ public class Eligible extends JFrame implements ActionListener
 		        {
 		        	String[] result = r.split("\\|"); 
 		        	name=result[0];
-		        	cgpa1=result[4];
+		        	salary1=result[4];
 		        	nob1=result[5];
-		        	cgpa = Double.parseDouble(cgpa1);
+		        	salary = Double.parseDouble(salary1);
 		        	nob = Double.parseDouble(nob1);
-		        	if(cgpa!=999)
+		        	if(salary!=999)
 		        	{
-		        		if(cgpa >= 8.0 && nob == 0)
+		        		if(salary >= 8.0 && nob == 0)
 		        	    {
                             b = name + " : " + "Platinum,Gold, Silver";
                             e="Eligible companies: SAP Labs (24LPA), Amazon (19LPA), ANZ (11LPA), Capgemini (8LPA), Cognizant (6LPA), Wipro (4LPA)";
@@ -130,14 +123,14 @@ public class Eligible extends JFrame implements ActionListener
                             pw.write(e+"\n\n");
 
 		        	    }
-		        	    else if(cgpa >= 7.0 && nob == 0)
+		        	    else if(salary >= 7.0 && nob == 0)
 		        	    {
 		        	    	b = name + " : " + "Gold, Silver";
                             e="Eligible companies: ANZ (11LPA), Capgemini (8LPA), Cognizant (6LPA), Wipro (4LPA)";
                             pw.write(b+"\n");
                             pw.write(e+"\n\n");
 		        	    }
-		        	    else if(cgpa >= 6.0)
+		        	    else if(salary >= 6.0)
 		        	    {
 		        	    	b = name + " : " + "Silver";
                             e="Eligible companies: Cognizant (6LPA), Wipro (4LPA)";
@@ -182,6 +175,7 @@ public class Eligible extends JFrame implements ActionListener
             }
         }
     }
+
 
     public static void main(String args[])
     {

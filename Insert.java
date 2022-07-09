@@ -91,7 +91,7 @@ public class Insert extends JFrame implements ActionListener
         nobT.setFont(font);
         nobT.setForeground(Color.BLACK);
 
-		companyL=new JLabel("Enter Aspiring Company:");
+		companyL=new JLabel("Enter Company Email:");
 		companyL.setBounds(350,430,300,40);
         companyL.setFont(font);
         companyL.setForeground(Color.WHITE);
@@ -100,7 +100,7 @@ public class Insert extends JFrame implements ActionListener
         companyT.setFont(font);
         companyT.setForeground(Color.BLACK);
 
-		ctcL=new JLabel("Enter Aspiring CTC:");
+		ctcL=new JLabel("Enter Employee Rating:");
 		ctcL.setBounds(350,490,300,40);
         ctcL.setFont(font);
         ctcL.setForeground(Color.WHITE);
