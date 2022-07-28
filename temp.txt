@@ -1,8 +1,6 @@
 NAME	|EMPID	|YOE	|BRANCH	|SALARY	|NOC	|COMPANY	|CTC	|COMMENTS
-Gautham	01	1	CSE	1	1	2	2	2
+Deepak	01	2	SDE	9	2	deepak@company.com	8	good
+Deepak	01	6	SDE	11	4	deepak@company.com	9	Awesome
 END OF RECORD
-Invalid Record Entry
-Invalid Record Entry
-Abhilash	05	06	CSE	9	00	22	2	2
-22	22	22	222	22	22	22	22	22
+Nesar	11	3	Test	10	2	nesar@company.com	8	good
 END OF RECORD

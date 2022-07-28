@@ -38,7 +38,7 @@ public class Display extends JFrame implements ActionListener
         displayheading.setForeground(Color.BLACK);
 
         output=new JTextArea();
-        output.setBounds(20, 150, 1200,400);
+        output.setBounds(20, 150, 1400,400);
         output.setFont(font);
         output.setForeground(Color.BLACK);
         output.setEditable(false);
@@ -74,12 +74,12 @@ public class Display extends JFrame implements ActionListener
         {
 			try
             {
-                String name = "", usn ="", sem = "", branch = "", cgpa= "", nob="", company="",ctc="",comments="", r;
+                String name = "", empid ="", yoe = "", branch = "", salary= "", nob="", email="",rating="",comments="", r;
 
                 File temp = new File("temp.txt");
 				Boolean createNewFile1 = temp.createNewFile();
                 BufferedWriter pw = new BufferedWriter(new FileWriter("temp.txt"));
-                String b = "NAME\t|USN\t|SEM\t|BRANCH\t|CGPA\t|NOB\t|COMPANY\t|CTC\t|COMMENTS";
+                String b = "NAME\t|EmpID\t|YOE\t|BRANCH\t|Salary\t|NOB\t|Email\t\t|rating\t|COMMENTS";
                 pw.write(b); 
                 pw.write("\n");
 
@@ -88,17 +88,17 @@ public class Display extends JFrame implements ActionListener
 		        {
 		        	String[] result = r.split("\\|");
 		        	name=result[0];
-		        	usn=result[1];
-		        	sem= result[2];
+		        	empid=result[1];
+		        	yoe= result[2];
 		        	branch=result[3];
-		        	cgpa=result[4];
+		        	salary=result[4];
 		        	nob=result[5];
-                    company=result[6];
-                    ctc=result[7];
+                    email=result[6];
+                    rating=result[7];
                     comments=result[8];
                     if(name.equals("999"))
                         break;
-                    String bb = name  + "\t|" + usn + "\t|" + sem + "\t|" + branch + "\t|" + cgpa + "\t|" + nob + "\t|" + company + "\t|" + ctc + "\t|" + comments;
+                    String bb = name  + "\t|" + empid + "\t|" + yoe + "\t|" + branch + "\t|" + salary + "\t|" + nob + "\t|" + email + "\t|" + rating + "\t|" + comments;
                     pw.write(bb);
                     pw.write("\n");
 		        }

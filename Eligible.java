@@ -33,28 +33,28 @@ public class Eligible extends JFrame implements ActionListener
         eligibleheading=new JLabel("APRAISAL ELIGIBILITY");
         eligibleheading.setBounds(550, 5, 700,20);
         eligibleheading.setFont(font);
-        eligibleheading.setForeground(Color.WHITE);
+        eligibleheading.setForeground(Color.BLACK);
 
         eligibleheading1=new JLabel("10% - CTC < 10 LPA and Number of Complaints < 8");
         eligibleheading1.setBounds(200, 50, 700,20);
         eligibleheading1.setFont(font);
-        eligibleheading1.setForeground(Color.WHITE);
+        eligibleheading1.setForeground(Color.BLACK);
 
         eligibleheading2=new JLabel("20% - CTC < 10 LPA and Number of Complaints < 3");
         eligibleheading2.setBounds(200, 75, 700,20);
         eligibleheading2.setFont(font);
-        eligibleheading2.setForeground(Color.WHITE);
+        eligibleheading2.setForeground(Color.BLACK);
 
         eligibleheading3=new JLabel("30% - CTC < 10 LPA and Number of Complaints = 0");
         eligibleheading3.setBounds(200, 100, 700,20);
         eligibleheading3.setFont(font);
-        eligibleheading3.setForeground(Color.WHITE);
+        eligibleheading3.setForeground(Color.BLACK);
 
 
         output=new JTextArea();
         output.setBounds(100, 150, 1150,400);
         output.setFont(font);
-        output.setForeground(Color.WHITE);
+        output.setForeground(Color.BLACK);
         output.setEditable(false);
 
         display = new JButton("Display");
@@ -64,15 +64,15 @@ public class Eligible extends JFrame implements ActionListener
         Color pul = new Color(0,0,255);
         Border bored = BorderFactory.createLineBorder(pul,5);
         display.setBorder(bored);
-        display.setForeground(Color.WHITE);
-        display.setBackground(blue);
+        display.setForeground(Color.BLACK);
+        display.setBackground(Color.WHITE);
 
         back = new JButton("Go Back");
 		back.setBounds(600,600,150,40);
 		back.addActionListener(this);
         back.setFont(font);
         back.setBorder(bored);
-        back.setForeground(Color.WHITE);
+        back.setForeground(Color.BLACK);
         
 
 
@@ -115,31 +115,26 @@ public class Eligible extends JFrame implements ActionListener
 		        	nob = Double.parseDouble(nob1);
 		        	if(salary!=999)
 		        	{
-		        		if(salary >= 8.0 && nob == 0)
+		        		if(salary >= 10 && nob ==0)
 		        	    {
-                            b = name + " : " + "Platinum,Gold, Silver";
-                            e="Eligible companies: SAP Labs (24LPA), Amazon (19LPA), ANZ (11LPA), Capgemini (8LPA), Cognizant (6LPA), Wipro (4LPA)";
+                            b = name + " : " + "30% Appraisal";
                             pw.write(b+"\n");
-                            pw.write(e+"\n\n");
 
 		        	    }
-		        	    else if(salary >= 7.0 && nob == 0)
+		        	    else if(salary >= 10 && nob>=3 && nob<=4)
 		        	    {
-		        	    	b = name + " : " + "Gold, Silver";
-                            e="Eligible companies: ANZ (11LPA), Capgemini (8LPA), Cognizant (6LPA), Wipro (4LPA)";
+		        	    	b = name + " : " + "20%";
                             pw.write(b+"\n");
-                            pw.write(e+"\n\n");
 		        	    }
-		        	    else if(salary >= 6.0)
+		        	    else if(salary >= 10 && nob > 4)
 		        	    {
-		        	    	b = name + " : " + "Silver";
-                            e="Eligible companies: Cognizant (6LPA), Wipro (4LPA)";
+		        	    	b = name + " : " + "10%";
+                           
                             pw.write(b+"\n");
-                            pw.write(e+"\n\n");
 		        	    }
 		        	    else
 		        	    {
-		        	    	b = name + " : " + "Not Eligible";
+		        	    	b = name + " : " + "Not Eligible for Appraisal";
                             pw.write(b+"\n\n");
 		        	    }
 		        	}	
